@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Md Jakariya Hasan's official page - Broken Heart Aesthetic.">
+    <meta name="author" content="Md Jakariya Hasan">
+    <title>Jakariya Hasan | Heartbroken Enthusiast</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --primary-red: #ff4757;
+            --deep-red: #c0392b;
+            --dark-bg: #0a0a0a;
+            --light-bg: #fdf2f2;
+            --neon-glow: 0 0 10px #ff4757, 0 0 20px #ff4757, 0 0 40px #ff4757;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            cursor: none;
+        }
+
+        /* --- UPDATED Preloader (Faster & Beautiful) --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+        }
+        
+        .loader-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heartbeat-loader {
+            font-size: 5rem;
+            color: var(--primary-red);
+            z-index: 2;
+            animation: heartMorph 1.2s infinite;
+            filter: drop-shadow(0 0 20px var(--primary-red));
+        }
+
+        /* এনিমেশন রিং */
+        .loader-ring {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--primary-red);
+            border-radius: 50%;
+            animation: spinRing 1s linear infinite;
+        }
+
+        .loading-text {
+            margin-top: 30px;
+            font-family: 'Courier New', monospace;
+            color: white;
+            font-size: 1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #000, #ff4757, #000);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 2s linear infinite;
+        }
+
+        @keyframes heartMorph {
+            0% { transform: scale(1); filter: drop-shadow(0 0 10px var(--primary-red)); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); filter: drop-shadow(0 0 30px var(--primary-red)); }
+            75% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spinRing {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shineText {
+            to { background-position: 200% center; }
+        }
+
+        /* --- Scroll Progress Bar --- */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+        #progress-bar {
+            height: 100%;
+            background: var(--primary-red);
+            width: 0%;
+            box-shadow: 0 0 10px var(--primary-red);
+            transition: width 0.1s;
+        }
+
+        /* --- Custom Cursor --- */
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-red);
+            box-shadow: 0 0 10px var(--primary-red);
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--primary-red);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        body:hover .cursor-outline { opacity: 1; }
+        a:hover ~ .cursor-outline, button:hover ~ .cursor-outline {
+            transform: translate(-50%, -50%) scale(1.5);
+            background-color: rgba(255, 71, 87, 0.1);
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+        }
+
+        /* --- Cursor Trail --- */
+        .trail-particle {
+            position: fixed;
+            pointer-events: none;
+            width: 6px;
+            height: 6px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            z-index: 9998;
+            opacity: 0.6;
+            animation: fadeTrail 1s forwards;
+            box-shadow: 0 0 8px var(--primary-red);
+        }
+        @keyframes fadeTrail {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            transition: var(--transition);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body.lang-bn {
+            font-family: 'Hind Siliguri', sans-serif !important;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 997;
+            opacity: 0.05;
+            background: url('https://cdnjs.cloudflare.com/ajax/libs/media-element/4.2.16/backgrounds/noise.png');
+        }
+
+        #spotlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 998;
+            background: radial-gradient(circle 600px at var(--x) var(--y), transparent 10%, rgba(0,0,0,0.85) 100%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        body.dark-mode #spotlight { opacity: 1; }
+        body.light-mode #spotlight { display: none; }
+
+        #snowCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            background: linear-gradient(-45deg, #0a0a0a, #1a0505, #2c0b0e, #000000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #f1f5f9;
+        }
+        body.light-mode {
+            background-color: var(--light-bg);
+            background-image: radial-gradient(circle at top right, #ffebeb, #fdf2f2);
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            z-index: 1000;
+            position: relative;
+        }
+
+        /* --- Controls --- */
+        .controls {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 2000;
+        }
+
+        .music-visualizer {
+            display: flex;
+            align-items: flex-end;
+            height: 25px;
+            gap: 3px;
+            margin-right: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .music-visualizer.active { opacity: 1; }
+        .bar {
+            width: 4px;
+            background: var(--primary-red);
+            border-radius: 2px;
+            animation: equalizer 1s infinite ease-in-out;
+        }
+        .bar:nth-child(1) { animation-duration: 0.8s; height: 10px; }
+        .bar:nth-child(2) { animation-duration: 1.1s; height: 20px; }
+        .bar:nth-child(3) { animation-duration: 0.6s; height: 15px; }
+        .bar:nth-child(4) { animation-duration: 1.3s; height: 22px; }
+        .bar:nth-child(5) { animation-duration: 0.9s; height: 12px; }
+
+        @keyframes equalizer {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1.2); }
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            background: var(--primary-red);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(192, 57, 43, 0.3);
+            font-weight: bold;
+        }
+        .control-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        #lang-icon {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .lang-switching {
+            transform: scale(0) rotate(360deg);
+            opacity: 0;
+        }
+
+        /* --- Profile Card --- */
+        .profile-card {
+            padding: 45px 20px;
+            border-radius: 35px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 71, 87, 0.2);
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        
+        .profile-card > * { transform: translateZ(20px); }
+        body.light-mode .profile-card { background: rgba(255, 255, 255, 0.8); }
+        body.dark-mode .profile-card { background: rgba(0, 0, 0, 0.4); }
+
+        .img-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .img-container::before {
+            content: '';
+            position: absolute;
+            inset: -6px; 
+            border-radius: 50%;
+            border: 5px solid var(--primary-red);
+            border-top-style: dotted;
+            border-bottom-style: double;
+            border-left-color: transparent;
+            animation: spinBrokenRing 12s linear infinite;
+            box-shadow: 0 0 25px rgba(255, 71, 87, 0.8), inset 0 0 10px rgba(255, 71, 87, 0.5);
+            z-index: 2;
+        }
+        .img-container::after {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: rgba(255, 71, 87, 0.7);
+            border-right-color: rgba(255, 71, 87, 0.3);
+            animation: spinErraticShard 7s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+            z-index: 1;
+        }
+        @keyframes spinBrokenRing {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.03); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        @keyframes spinErraticShard {
+            0% { transform: rotate(0deg) scale(0.95); opacity: 0.5; }
+            30% { transform: rotate(-50deg) scale(1.1); opacity: 1; }
+            70% { transform: rotate(90deg) scale(0.9); opacity: 0.7; }
+            100% { transform: rotate(360deg) scale(1); opacity: 0.5; }
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 5;
+            display: block; 
+            box-shadow: inset 0 0 20px rgba(255, 71, 87, 0.9);
+            filter: grayscale(20%) contrast(1.1);
+        }
+        .profile-img:hover { filter: grayscale(0%); transform: scale(1.03); }
+
+        .glitch-wrapper {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+        .glitch {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: none; 
+            position: relative;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+        body.light-mode .glitch { color: var(--dark-bg); }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #00ffff;
+            clip: rect(24px, 100%, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #ff00ff;
+            clip: rect(85px, 100%, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+        body.light-mode .glitch::before, body.light-mode .glitch::after { background: var(--light-bg); }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(14px, 9999px, 127px, 0); }
+            20% { clip: rect(38px, 9999px, -9px, 0); }
+            40% { clip: rect(89px, 9999px, 49px, 0); }
+            60% { clip: rect(24px, 9999px, 128px, 0); }
+            80% { clip: rect(109px, 9999px, 86px, 0); }
+            100% { clip: rect(54px, 9999px, 25px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(119px, 9999px, 47px, 0); }
+            20% { clip: rect(16px, 9999px, 129px, 0); }
+            40% { clip: rect(69px, 9999px, 11px, 0); }
+            60% { clip: rect(13px, 9999px, 2px, 0); }
+            80% { clip: rect(59px, 9999px, 97px, 0); }
+            100% { clip: rect(133px, 9999px, 7px, 0); }
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            list-style: none;
+        }
+        .info-item {
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid rgba(255, 71, 87, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-red);
+            transition: 0.3s;
+        }
+        .info-item:hover {
+            background: var(--primary-red);
+            color: white;
+            box-shadow: 0 0 15px var(--primary-red);
+        }
+
+        /* --- Pain Timer --- */
+        .pain-timer-container {
+            margin: 25px auto 10px auto;
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.1), inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .pain-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+        .pain-number {
+            font-family: 'Courier New', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary-red);
+        }
+        body.light-mode .pain-number { color: var(--deep-red); text-shadow: none; }
+        .pain-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-top: 2px;
+            color: var(--primary-red);
+        }
+        .pain-separator {
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            align-self: flex-start;
+            margin-top: 5px;
+            animation: pulseSep 1s infinite;
+        }
+        @keyframes pulseSep {
+            0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--primary-red); }
+            50% { opacity: 0.3; text-shadow: none; }
+        }
+
+        /* --- Sections --- */
+        section {
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 28px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        body.dark-mode section { background: rgba(255, 255, 255, 0.01); }
+        body.light-mode section { background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        section:hover {
+            border-color: rgba(255, 71, 87, 0.4);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 71, 87, 0.1);
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-red);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* --- NEW SECTION STYLES: Fog & Reality --- */
+        .poetic-block {
+            text-align: center;
+            margin: 30px 0;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        .lang-en .poetic-block {
+            font-family: 'Playfair Display', serif;
+        }
+        .verse {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 2px solid rgba(255, 71, 87, 0.3);
+            display: inline-block;
+            text-align: left;
+        }
+
+        .reality-quote-box {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px dashed var(--primary-red);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 0 15px rgba(255, 71, 87, 0.1);
+            transform: skewX(-3deg);
+        }
+        body.light-mode .reality-quote-box {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--primary-red);
+        }
+
+        .quote-content {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transform: skewX(3deg);
+        }
+        .highlight-text { color: #ff6b81; }
+        .money-text { 
+            color: #2ed573;
+            text-shadow: 0 0 5px rgba(46, 213, 115, 0.5);
+            font-size: 1.4rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .bio-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            background: rgba(255, 71, 87, 0.1);
+            border-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        .stat-card i {
+            font-size: 1.5rem;
+            color: var(--primary-red);
+        }
+        .stat-card div {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-card .label {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+        }
+        .stat-card .value {
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+        }
+        body.light-mode .stat-card {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        /* --- Buttons --- */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .link-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 18px;
+            background: rgba(255, 71, 87, 0.05);
+            border: 1px solid rgba(255, 71, 87, 0.1);
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .link-btn:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 71, 87, 0.3);
+        }
+
+        /* --- Hobbies --- */
+        .hobbies-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .hobby-item {
+            padding: 12px 25px;
+            border-radius: 50px;
+            background: rgba(255, 71, 87, 0.05);
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hobby-item:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+        }
+
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            padding: 25px;
+            border-left: 5px solid var(--primary-red);
+            margin: 30px 0;
+            background: rgba(255, 71, 87, 0.03);
+            line-height: 1.6;
+        }
+
+        .hidden { 
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            opacity: 0.5;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 600px) {
+            .cursor-dot, .cursor-outline { display: none; }
+            * { cursor: auto; }
+            .glitch { font-size: 2.2rem; }
+            section { padding: 30px 20px; }
+            .controls { top: 15px; right: 15px; }
+            .profile-card { transform: none !important; }
+            .img-container { width: 160px; height: 160px; }
+            .pain-number { font-size: 1.4rem; }
+            .pain-label { font-size: 0.6rem; }
+        }
+
+        .pain-heart-effect {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2.5rem;
+            z-index: 9999;
+            opacity: 1;
+            filter: drop-shadow(0 0 10px rgba(255, 71, 87, 0.8));
+            animation: floatUpPain 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        @keyframes floatUpPain {
+            0% { transform: translate(-50%, -50%) scale(0.5) rotate(0deg); opacity: 0; }
+            20% { transform: translate(-50%, -50%) scale(1.2) rotate(-10deg); opacity: 1; }
+            100% { transform: translate(-50%, -200%) scale(1.5) rotate(15deg); opacity: 0; }
+        }
+
+        /* --- NEW: Video Section Styles & Animations --- */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 71, 87, 0.3);
+            transition: var(--transition);
+        }
+        .video-wrapper:hover {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 25px rgba(255, 71, 87, 0.5), 0 0 50px rgba(255, 71, 87, 0.2);
+            transform: scale(1.02);
+        }
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+        .custom-video-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(10, 10, 10, 0.7);
+            border: 2px solid var(--primary-red);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer !important;
+            z-index: 10;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+        }
+        .custom-video-btn:hover {
+            background: var(--primary-red);
+            transform: translate(-50%, -50%) scale(1.15);
+            box-shadow: 0 0 25px var(--primary-red);
+        }
+        .floating-anim {
+            animation: floatSection 6s ease-in-out infinite;
+        }
+        @keyframes floatSection {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ========== AI CHAT SECTION (FULLY THEMED) ========== */
+        .chat-section {
+            margin-bottom: 40px;
+            padding: 30px 25px;
+            border-radius: 28px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        body.dark-mode .chat-section { background: rgba(255, 255, 255, 0.01); }
+        body.light-mode .chat-section { background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .chat-section:hover {
+            border-color: rgba(255, 71, 87, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .chat-area {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-red) transparent;
+            margin-bottom: 20px;
+        }
+        .chat-area::-webkit-scrollbar { width: 6px; }
+        .chat-area::-webkit-scrollbar-thumb { background: var(--primary-red); border-radius: 10px; }
+
+        .msg {
+            max-width: 85%;
+            padding: 14px 20px;
+            font-size: 1rem;
+            animation: springUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        @keyframes springUp {
+            0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .msg.ai {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            color: #5d4a5d;
+            border-radius: 25px 25px 25px 5px;
+        }
+        body.dark-mode .msg.ai {
+            background: rgba(20, 20, 20, 0.7);
+            color: #f1f5f9;
+            border-color: var(--primary-red);
+        }
+        .msg.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            color: #443344;
+            border-radius: 25px 25px 5px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        body.dark-mode .msg.user {
+            background: linear-gradient(135deg, #5d2e3b 0%, #8a3f4b 100%);
+            color: #eee;
+            border-color: var(--primary-red);
+        }
+        pre {
+            background: #2d272b !important;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 12px 0;
+            position: relative;
+            border: 1px solid #4a3b4a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        code { font-family: 'Fira Code', monospace; font-size: 0.9rem; color: #ffd1dc; }
+        .copy-btn {
+            position: absolute; top: 10px; right: 10px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffb1c1;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            border-radius: 12px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .input-wrapper {
+            padding: 10px 0 0;
+            background: transparent;
+        }
+        .input-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(25px);
+            padding: 8px 10px 8px 20px;
+            border-radius: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 15px 45px rgba(214, 139, 156, 0.15);
+        }
+        body.dark-mode .input-container {
+            background: rgba(20, 20, 20, 0.7);
+            border-color: var(--primary-red);
+        }
+        .chat-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 10px;
+            color: #4a3b4a;
+            font-family: inherit;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        body.dark-mode .chat-input { color: #eee; }
+        .chat-input::placeholder { color: #bcaaa4; font-weight: 300; }
+        .btn-icon {
+            background: white;
+            border: none;
+            color: #d81b60;
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.1);
+        }
+        body.dark-mode .btn-icon { background: #333; color: var(--primary-red); }
+        .btn-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: #fce4ec;
+        }
+        .btn-send {
+            background: var(--primary-red);
+            color: white;
+            margin-left: 8px;
+        }
+        .btn-send:hover {
+            background: var(--deep-red);
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+            transform: scale(1.1) translateY(-2px);
+        }
+        .blooming-status {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot-pulse {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--primary-red);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        /* ========== END AI CHAT SECTION ========== */
+    </style>
+</head>
+<body class="dark-mode">
+
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="heartbeat-loader">
+                <i class="fas fa-heart-broken"></i>
+            </div>
+        </div>
+        <div class="loading-text">Loading Pain...</div>
+    </div>
+
+    <div class="noise-overlay"></div>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div id="spotlight"></div>
+
+    <canvas id="snowCanvas"></canvas>
+    
+    <div class="controls">
+        <div class="music-visualizer" id="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <button class="control-btn" onclick="toggleLanguage()" title="Switch Language">
+            <span id="lang-icon">BN</span>
+        </button>
+        <button class="control-btn" onclick="toggleMusic(event)" title="Play/Pause Melody">
+            <i class="fas fa-music" id="music-icon"></i>
+        </button>
+        <button class="control-btn" onclick="toggleTheme()" title="Switch Perspective">
+            <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+    </div>
+    
+    <audio id="bgm" loop>
+        <source src="https://github.com/jakariya41yt-cyber/song/raw/66aa61377b30ed727e526f47de38914696924827/GhorGari%20Lofi-%20Highway%20_%20%E0%A6%98%E0%A7%8B%E0%A6%B0%E0%A6%97%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A7%80%20_%20Lofi%20Remix%20_%20Lyrical%20Video(M4A_128K).m4a" type="audio/mp4">
+    </audio>
+
+    <div class="container">
+        <header class="profile-card" id="tiltCard" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="img-container">
+                <img src="https://github.com/jakariya41yt-cyber/my_photo/raw/refs/heads/main/FB_IMG_1770635659407.jpg" alt="Jakariya Hasan" class="profile-img">
+            </div>
+            
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="Md Jakariya Hasan">Md Jakariya <span style="color: var(--primary-red);">Hasan</span></h1>
+            </div>
+            
+            <p class="tagline">
+                <span class="lang-en">Finding peace in the pieces...</span>
+                <span class="lang-bn hidden">টুকরো স্মৃতির মাঝে শান্তি খুঁজে ফিরছি...</span>
+            </p>
+            <div class="profile-info">
+                <span class="info-item"><i class="fas fa-heart-broken"></i> Heart Broken</span>
+                <span class="info-item"><i class="fas fa-map-marker-alt"></i> Kishoreganj, BD</span>
+            </div>
+
+            <div class="pain-timer-container">
+                <div class="pain-box">
+                    <span class="pain-number" id="p-years">22</span>
+                    <span class="pain-label">Years</span>
+                </div>
+                <div class="pain-box">
+                    <span class="pain-number" id="p-months">08</span>
+                    <span class="pain-label">Months</span>
+                </div>
+                <div class="pain-box">
+                    <span class="pain-number" id="p-days">09</span>
+                    <span class="pain-label">Days</span>
+                </div>
+                <div class="pain-separator">:</div>
+                <div class="pain-box">
+                    <span class="pain-number" id="p-hours">00</span>
+                    <span class="pain-label">Hours</span>
+                </div>
+                <div class="pain-box">
+                    <span class="pain-number" id="p-min">00</span>
+                    <span class="pain-label">Min</span>
+                </div>
+                <div class="pain-box">
+                    <span class="pain-number" id="p-sec">00</span>
+                    <span class="pain-label">Sec</span>
+                </div>
+            </div>
+        </header>
+
+        <section data-aos="fade-up" data-aos-delay="100" class="floating-anim">
+            <h2><i class="fas fa-film"></i> 
+                <span class="lang-en">Fragments of Memory</span>
+                <span class="lang-bn hidden">স্মৃতির টুকরো চিত্র</span>
+            </h2>
+            <p class="lang-en">A visual echo of untold stories. Press play to dive into the silence.</p>
+            <p class="lang-bn hidden">না-বলা গল্পের এক দৃশ্যমান প্রতিধ্বনি। নীরবতায় ডুব দিতে প্লে করুন।</p>
+            
+            <div class="video-wrapper">
+                <video id="myVideo" preload="metadata" poster="https://github.com/mdjakariyahasan753-ui/mybiovideoimag/raw/refs/heads/main/20260219_052117.jpg">
+                    <source src="https://github.com/Jakariya2020/song/raw/refs/heads/main/lv_0_20260218220256.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="videoPlayBtn" class="custom-video-btn" onclick="toggleMainVideo()">
+                    <i class="fas fa-play" id="videoPlayIcon"></i>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-user-secret"></i> 
+                <span class="lang-en">My Silence</span>
+                <span class="lang-bn hidden">আমার নীরবতা</span>
+            </h2>
+            
+            <div class="lang-en">
+                <blockquote>"My silence is not empty; it is full of answers."</blockquote>
+                <p>I speak little, not because I lack words, but because I have learned that not every feeling belongs on display. Some emotions deserve the sanctity of silence. Life taught me early--not every light brings warmth, and not every smile signals peace.</p>
+                <p>Sometimes, the quietest people are fighting the loudest wars--alone, unseen, and within.</p>
+                
+                <h3>Reality & Ambition</h3>
+                <p>I handle my duties in the daylight and face my truth in the dark. In those solitary moments, there are no witnesses, no applause--just me and the raw reality of who I am. I hold no hatred for love, nor do I worship it blindly. Love is beautiful, but it is not the entirety of life.</p>
+                <p><strong>My focus is sharp and stripped of noise:</strong></p>
+                <ul>
+                    <li>To build myself from the ground up.</li>
+                    <li>To stand firmly on my own feet.</li>
+                    <li>To earn not just money, but freedom.</li>
+                </ul>
+                <p><br>In the real world, wealth is not just currency; it is dignity, security, and the power to say "no."</p>
+
+                <h3>Character & Dignity</h3>
+                <p>I have anger, but it is disciplined. I do not engage in pointless battles; chaos is not my nature. Chasing people or drama is beneath me. Anyone can explode, but real power lies in control.</p>
+                <p>However, do not mistake my patience for weakness. I respect the peace of others, but if someone deliberately threatens mine, I do not retreat. I stand my ground. This is not revenge--it is self-respect. It is drawing a line that cannot be crossed.</p>
+
+                <h3>My Core: Parents</h3>
+                <p>At the center of my universe are my parents. They are my breath, my life force. When the world misunderstood me, they stood by quietly. They are the silent witnesses to my exhaustion, my failures, and my unspoken pain. Everything I am, and everything I aim to be, is rooted in their sacrifices. I fight not just for myself, but to bring peace and pride to their eyes.</p>
+            </div>
+
+            <div class="lang-bn hidden">
+                <blockquote>"আমার নীরবতা শূন্যতা নয়, এটি আমার শক্তি।"</blockquote>
+                <p>আমি কথা কম বলি, কারণ জীবন আমাকে শিখিয়েছে--সব অনুভূতি নিলামে তুলতে নেই, কিছু অনুভূতি বুকের গভীরে খুব গোপনে বাঁচিয়ে রাখতে হয়। খুব অল্প বয়সেই আমি বুঝেছি, সব আলোতে উষ্ণতা থাকে না, আর সব হাসির পেছনে সুখ থাকে না।</p>
+                <p>মাঝে মাঝে সবচেয়ে শান্ত মানুষটিই ভেতরে সবচেয়ে বড় যুদ্ধটা লড়ে--একেবারে একা, নিঃশব্দে।</p>
+
+                <h3>বাস্তবতা ও লক্ষ্য</h3>
+                <p>দিনের আলোয় আমি দায়িত্ব পালন করি, আর রাতের অন্ধকারে নিজের বিবেকের মুখোমুখি হই। সেখানে কোনো দর্শক নেই, হাততালি নেই--আছে শুধু আমি আর আমার সত্য। ভালোবাসা নিয়ে আমার কোনো ঘৃণা নেই, তবে অন্ধ মোহও নেই। আমি জানি ভালোবাসা সুন্দর, কিন্তু ভালোবাসা মানেই 'জীবন' নয়।</p>
+                <p><strong>তাই আমার লক্ষ্য এখন স্বচ্ছ ও স্থির:</strong></p>
+                <ul>
+                    <li>অপ্রয়োজনীয় নাটক এড়িয়ে চলা।</li>
+                    <li>নিজেকে ইস্পাতের মতো শক্ত করে গড়া।</li>
+                    <li>অর্থনৈতিক স্বাধীনতা অর্জন করা।</li>
+                </ul>
+                <p><br>কারণ আমি বিশ্বাস করি, বাস্তব পৃথিবীতে টাকা মানে কেবল কাগজ নয়--টাকা মানে নিরাপত্তা, আত্মসম্মান এবং মাথা উঁচু করে বাঁচার স্বাধীনতা।</p>
+
+                <h3>চরিত্র ও আত্মসম্মান</h3>
+                <p>আমার রাগ আছে, কিন্তু তা বিশৃঙ্খল নয়। আমি অকারণে তর্কে জড়াই না, অন্যের পেছনে লাগা আমার আভিজাত্যে বাঁধে। রাগ দেখানো সহজ, কিন্তু রাগ সামলে রাখাই আসল পৌরুষ। তবে, আমার এই শান্ত স্বভাবকে কেউ দুর্বলতা ভাবলে ভুল করবে। আমি কারো শান্তিতে হানা দিই না, কিন্তু কেউ যদি আমার আত্মসম্মানে আঘাত করে, তবে আমি আপোষ করি না। এটা প্রতিশোধ নয়, এটা নিজের সীমানা জানান দেওয়া।</p>
+
+                <h3>আমার পৃথিবী: মা-বাবা</h3>
+                <p>আমার সমস্ত অস্তিত্ব, আমার সব লড়াইয়ের মূলে মাত্র দুটি মানুষ--আমার মা এবং বাবা। তারাই আমার পৃথিবী, আমার নিশ্বাস। যখন কেউ আমাকে বোঝেনি, তারা পাশে ছিলেন। আমার ক্লান্তি, ব্যর্থতা আর না-বলা যন্ত্রণার নীরব সাক্ষী তারাই। আমি লড়ছি, কেবল নিজের জন্য নয়--তাদের চোখে একটু প্রশান্তি আর গর্ব দেখার জন্য।</p>
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-delay="100" class="fog-section">
+            <h2><i class="fas fa-smog"></i> 
+                <span class="lang-en">The Fog Within</span>
+                <span class="lang-bn hidden">ভিতরের কুয়াশা</span>
+            </h2>
+
+            <div class="lang-en">
+                <div class="poetic-block">
+                    <p class="verse">
+                        Fog gathers inside my head,<br>
+                        Thoughts pause halfway through,<br>
+                        As if I know everything, yet understand nothing.<br>
+                        Asking myself repeatedly, 'Where are you actually going?'
+                    </p>
+                    <p class="verse">
+                        A strange pain in the chest,<br>
+                        Neither of loss, nor of gain,<br>
+                        Neither of love, nor of rebellion,<br>
+                        Just an endless fear—'Will I ever be anything?'
+                    </p>
+                    <p class="verse">
+                        Wanted to do so much,<br>
+                        Perhaps still do, but desires are tired nowadays,<br>
+                        They don't run like before,<br>
+                        They just sit quietly—inside me.
+                    </p>
+                </div>
+                <div class="reality-quote-box">
+                    <div class="quote-content">
+                        <span class="highlight-text">➤ Love Is Beautiful</span>
+                        <br>But,<br>
+                        <span class="money-text">Money Is Powerful...! 💀💸💸💸</span>
+                    </div>
+                </div>
+                <div class="bio-stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <span class="label">Profession</span>
+                            <span class="value">Private Job</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star-and-crescent"></i>
+                        <div>
+                            <span class="label">Religion</span>
+                            <span class="value">Islam</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-slash"></i>
+                        <div>
+                            <span class="label">Relation</span>
+                            <span class="value">Single</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lang-bn hidden">
+                <div class="poetic-block">
+                    <p class="verse">
+                        মাথার ভেতর কুয়াশা জমে আছে<br>
+                        চিন্তাগুলো থমকে থাকে মাঝপথে<br>
+                        যেন সবকিছু জানি, তবু কিছুই বুঝি না<br>
+                        নিজেকেই বারবার প্রশ্ন করি 'তুই কই যাচ্ছিস আসলে?
+                    </p>
+                    <p class="verse">
+                        বুকের ভেতর একটা অদ্ভুত ব্যথা<br>
+                        না হারানোর, না পাওয়ার<br>
+                        না প্রেমের, না বিদ্রোহের<br>
+                        শুধু একটা অন্তহীন ভয় 'আমি কি কোনোদিন কিছু হবো?
+                    </p>
+                    <p class="verse">
+                        অনেক কিছু করতে চেয়েছিলাম<br>
+                        হয়তো এখনো চাই, কিন্তু ইচ্ছেগুলো যেন আজকাল ক্লান্ত,<br>
+                        তারা আর দৌড়ায় না আগের মতো,<br>
+                        শুধু বসে থাকে- আমার ভেতরে।
+                    </p>
+                </div>
+                <div class="reality-quote-box">
+                    <div class="quote-content">
+                        <span class="highlight-text">➤ Love Is Beautiful</span>
+                        <br>But,<br>
+                        <span class="money-text">Money Is Powerful...! 💀💸💸💸</span>
+                    </div>
+                </div>
+                <div class="bio-stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <span class="label">পেশা</span>
+                            <span class="value">বেসরকারি চাকরি</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star-and-crescent"></i>
+                        <div>
+                            <span class="label">ধর্ম</span>
+                            <span class="value">ইসলাম</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-slash"></i>
+                        <div>
+                            <span class="label">সম্পর্ক</span>
+                            <span class="value">সিঙ্গেল</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-fingerprint"></i> 
+                <span class="lang-en">Personal Manifesto & Digital Identity</span>
+                <span class="lang-bn hidden">ব্যক্তিগত ইশতেহার ও ডিজিটাল সত্তা</span>
+            </h2>
+
+            <div class="lang-en">
+                <p><strong>The Glitch in the Matrix:</strong> I exist in the spaces between lines of code and the beat of a broken heart. My digital footprint is not a cry for attention; it is an archive of survival.</p>
+                <p><strong>Code of Conduct:</strong></p>
+                <ul>
+                    <li><strong>Authenticity over Algorithm:</strong> I do not post to please the machine. I post to document the journey.</li>
+                    <li><strong>Digital Stoicism:</strong> I observe the noise of social media, but I do not let it consume my peace.</li>
+                    <li><strong>The Red Aesthetic:</strong> Red is not just a color. It is passion, pain, and the blood that runs through veins even when the heart feels cold.</li>
+                </ul>
+            </div>
+
+            <div class="lang-bn hidden">
+                <p><strong>ম্যাট্রিক্সের ত্রুটি:</strong> আমি কোডের লাইন এবং ভাঙা হৃদয়ের স্পন্দনের মাঝখানের শূন্যস্থানে বাস করি। আমার ডিজিটাল উপস্থিতি মনোযোগ পাওয়ার জন্য আর্তনাদ নয়; এটি টিকে থাকার এক দলিল।</p>
+                <p><strong>আচরণবিধি:</strong></p>
+                <ul>
+                    <li><strong>অ্যালগরিদমের ঊর্ধ্বে সত্যতা:</strong> আমি যন্ত্রকে খুশি করার জন্য পোস্ট করি না। আমি আমার যাত্রাপথ নথিবদ্ধ করি।</li>
+                    <li><strong>ডিজিটাল স্টয়িসিজম:</strong> আমি সোশ্যাল মিডিয়ার কোলাহল দেখি, কিন্তু তা আমার শান্তি নষ্ট করতে দিই না।</li>
+                    <li><strong>লাল নান্দনিকতা:</strong> লাল কেবল একটি রঙ নয়। এটি আবেগ, বেদনা এবং সেই রক্ত যা শিরায় প্রবাহিত হয়, এমনকি যখন হৃদয় বরফের মতো শীতল।</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- ===== NEW AI CHAT SECTION ADDED HERE (FULLY THEMED) ===== -->
+        <section class="chat-section" data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-robot"></i> 
+                <span class="lang-en">🧠 JRS AI – Bloom (Chat with me)</span>
+                <span class="lang-bn hidden">🧠 JRS AI – ব্লুম (আমার সাথে কথা বলুন)</span>
+            </h2>
+
+            <!-- chat messages container -->
+            <div class="chat-area" id="chatContainer">
+                <div class="msg ai">
+                    <span class="lang-en"><strong>✨ Welcome, friend</strong><br>I'm your natural AI companion. How can I make your day more colorful and simple? Ask me anything.</span>
+                    <span class="lang-bn hidden"><strong>✨ স্বাগতম, বন্ধু</strong><br>আমি আপনার প্রাকৃতিক এআই সঙ্গী। আপনার দিনটি কীভাবে রঙিন ও সহজ করে তুলতে পারি? কিছু জিজ্ঞাসা করুন!</span>
+                </div>
+            </div>
+
+            <!-- input area -->
+            <div class="input-wrapper">
+                <div class="input-container">
+                    <button class="btn-icon" id="attachBtn" title="ফাইল যুক্ত করুন">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                    </button>
+                    <input type="file" id="fileInput" hidden>
+                    
+                    <input type="text" class="chat-input" id="messageInput" 
+                           placeholder="Let your thoughts blossom here..." 
+                           autocomplete="off">
+                    
+                    <button class="btn-icon btn-send" id="sendBtn" aria-label="Send">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END NEW AI CHAT SECTION ===== -->
+
+        <section data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-link"></i> 
+                <span class="lang-en">Find Me in the Dark</span>
+                <span class="lang-bn hidden">অন্ধকারে আমায় খুঁজুন</span>
+            </h2>
+            <div class="link-grid">
+                <a href="https://www.facebook.com/jakariya41jr" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.tiktok.com/@jakariya41jr?_r=1&_t=ZS-935B76zMUfF" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+                <a href="https://www.instagram.com/jakariya41jr?igsh=dXE3dGcwbTNuZjVx" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://m.me/jakariya41jr" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-messenger"></i> Messenger
+                </a>
+                <a href="https://t.me/jakariya41jr" class="link-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-heart-broken"></i> 
+                <span class="lang-en">Things I Do</span>
+                <span class="lang-bn hidden">আমার জগৎ</span>
+            </h2>
+            <div class="hobbies-grid">
+                <div class="hobby-item">Fü©kîňg My Enemy</div>
+
+                <div class="hobby-item">
+                    <i class="fas fa-crosshairs"></i> 
+                    <span class="lang-en">Free Fire Enthusiast</span>
+                    <span class="lang-bn hidden">ফ্রি ফায়ার প্রেমী</span>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-laptop-code"></i> 
+                    <span class="lang-en">Digital Crafting</span>
+                    <span class="lang-bn hidden">ডিজিটাল কারুকাজ</span>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-eye"></i> 
+                    <span class="lang-en">Observing Life</span>
+                    <span class="lang-bn hidden">জীবন পর্যবেক্ষণ</span>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-music"></i> 
+                    <span class="lang-en">Soulful Melodies</span>
+                    <span class="lang-bn hidden">আত্মার সুর</span>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-pen-fancy"></i> 
+                    <span class="lang-en">Digital Storytelling</span>
+                    <span class="lang-bn hidden">ডিজিটাল গল্প বলা</span>
+                </div>
+            </div>
+        </section>
+        
+        <section data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-ghost"></i> 
+                <span class="lang-en">The Aftermath</span>
+                <span class="lang-bn hidden">শেষ কথা</span>
+            </h2>
+            <div class="lang-en">
+                <p>I am emotional, but not weak. I am quiet, but not hollow. Inside this silence, I am forging myself--slowly, steadily, unbreakably. Perhaps one day, someone will understand the magnitude of the fire I kept under control.</p>
+                <blockquote>"I know where I started, and I know exactly why I am willing to go the distance."</blockquote>
+            </div>
+            <div class="lang-bn hidden">
+                <p>আমি আবেগী, কিন্তু ভঙ্গুর নই। আমি শান্ত, কিন্তু ফুরিয়ে যাইনি। এই নীরবতার আড়ালে আমি নিজেকে তিলে তিলে গড়ে তুলছি--ধীরে, কিন্তু অটুট। একদিন হয়তো কেউ বুঝবে এই শান্ত চোখের আড়ালে কতটা আগুন নিয়ন্ত্রণে ছিল।</p>
+                <blockquote>"কারণ আমি জানি আমি কোথা থেকে এসেছি, আর আমি জানি আমাকে কত দূর যেতে হবে।"</blockquote>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-delay="100">
+            <h2><i class="fas fa-envelope-open-text"></i> 
+                <span class="lang-en">Leave a Message</span>
+                <span class="lang-bn hidden">বার্তা পাঠান</span>
+            </h2>
+            <div class="link-grid">
+                <a href="mailto:mdjakariyahasan10@gmail.com" class="link-btn"><i class="fas fa-envelope"></i> Email</a>
+                <a href="tel:+8809638406092" class="link-btn"><i class="fas fa-phone"></i> Call Me</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Md Jakariya Hasan. Built with 💔 and a lot of memories.</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // --- Preloader Logic ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 800); 
+        });
+
+        AOS.init({ duration: 1200, once: true });
+
+        const cursorDot = document.querySelector(".cursor-dot");
+        const cursorOutline = document.querySelector(".cursor-outline");
+
+        // --- Cursor & Trail ---
+        window.addEventListener("mousemove", (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+            if(Math.random() > 0.5) { 
+                let particle = document.createElement('div');
+                particle.classList.add('trail-particle');
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1000);
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + "%";
+        });
+
+        // --- Tilt Card ---
+        const card = document.getElementById("tiltCard");
+        card.addEventListener("mousemove", (e) => {
+            if (window.innerWidth < 600) return;
+            const rect = card.getBoundingClientRect();
+            const rotateX = (((e.clientY - rect.top) - (rect.height / 2)) / 25) * -1;
+            const rotateY = ((e.clientX - rect.left) - (rect.width / 2)) / 25;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            spotlight.style.setProperty('--x', e.clientX + 'px');
+            spotlight.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.replace('dark-mode', 'light-mode');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                body.classList.replace('light-mode', 'dark-mode');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        // --- Pain Timer ---
+        function updatePainTimer() {
+            const startDate = new Date('2003-05-27T00:00:00');
+            const now = new Date();
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+            if (days < 0) { months--; const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0); days += prevMonth.getDate(); }
+            if (months < 0) { years--; months += 12; }
+            const fmt = (n) => n < 10 ? '0' + n : n;
+            document.getElementById('p-years').innerText = fmt(years);
+            document.getElementById('p-months').innerText = fmt(months);
+            document.getElementById('p-days').innerText = fmt(days);
+            document.getElementById('p-hours').innerText = fmt(now.getHours());
+            document.getElementById('p-min').innerText = fmt(now.getMinutes());
+            document.getElementById('p-sec').innerText = fmt(now.getSeconds());
+        }
+        setInterval(updatePainTimer, 1000);
+
+        // --- Music & Video Interaction Logic ---
+        const audio = document.getElementById('bgm');
+        const mainVideo = document.getElementById('myVideo');
+        const videoPlayIcon = document.getElementById('videoPlayIcon');
+        const videoBtn = document.getElementById('videoPlayBtn');
+        const mIcon = document.getElementById('music-icon');
+        const visualizer = document.getElementById('visualizer');
+
+        function toggleMusic(event) {
+            if(event) event.stopPropagation();
+            if (audio.paused) {
+                // ভিডিও চললে মিউজিক প্লে হবে না
+                if(!mainVideo.paused) {
+                    mainVideo.pause();
+                    videoPlayIcon.classList.replace('fa-pause', 'fa-play');
+                    videoBtn.style.opacity = "1";
+                }
+                audio.play();
+                mIcon.classList.replace('fa-music', 'fa-pause');
+                visualizer.classList.add('active');
+            } else {
+                audio.pause();
+                mIcon.classList.replace('fa-pause', 'fa-music');
+                visualizer.classList.remove('active');
+            }
+        }
+
+        function toggleMainVideo() {
+            if (mainVideo.paused) {
+                // ভিডিও শুরু হলে ব্যাকগ্রাউন্ড মিউজিক বন্ধ হবে
+                if (!audio.paused) {
+                    audio.pause();
+                    mIcon.classList.replace('fa-pause', 'fa-music');
+                    visualizer.classList.remove('active');
+                }
+                mainVideo.play();
+                videoPlayIcon.classList.replace('fa-play', 'fa-pause');
+                videoBtn.style.opacity = "0.5";
+            } else {
+                mainVideo.pause();
+                videoPlayIcon.classList.replace('fa-pause', 'fa-play');
+                videoBtn.style.opacity = "1";
+            }
+        }
+
+        // ভিডিও শেষ হলে বাটন ঠিক করা
+        mainVideo.onended = () => {
+            videoPlayIcon.classList.replace('fa-pause', 'fa-play');
+            videoBtn.style.opacity = "1";
+        };
+
+        // --- Language Toggle ---
+        let currentLang = 'en';
+        function toggleLanguage() {
+            const body = document.body;
+            const langIcon = document.getElementById('lang-icon');
+            langIcon.classList.add('lang-switching');
+            setTimeout(() => {
+                if (currentLang === 'en') {
+                    currentLang = 'bn'; langIcon.textContent = "EN"; body.classList.add('lang-bn');
+                    document.querySelectorAll('.lang-en').forEach(el => el.classList.add('hidden'));
+                    document.querySelectorAll('.lang-bn').forEach(el => el.classList.remove('hidden'));
+                } else {
+                    currentLang = 'en'; langIcon.textContent = "BN"; body.classList.remove('lang-bn');
+                    document.querySelectorAll('.lang-en').forEach(el => el.classList.remove('hidden'));
+                    document.querySelectorAll('.lang-bn').forEach(el => el.classList.add('hidden'));
+                }
+                langIcon.classList.remove('lang-switching');
+            }, 400);
+        }
+
+        // --- Canvas Animation ---
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, elements = [];
+        function initCanvas() { width = window.innerWidth; height = window.innerHeight; canvas.width = width; canvas.height = height; }
+        class FallingElement {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * width; this.y = Math.random() * height - height;
+                this.size = Math.random() * 20 + 10; this.speedV = Math.random() * 1.5 + 0.5;
+                this.char = ['❄', '💔', '🥀', '💧', '✨'][Math.floor(Math.random() * 5)];
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() { this.y += this.speedV; if (this.y > height) this.reset(); }
+            draw() {
+                ctx.globalAlpha = this.opacity; ctx.font = `${this.size}px serif`;
+                ctx.fillStyle = document.body.classList.contains('dark-mode') ? '#ff4757' : '#c0392b';
+                ctx.fillText(this.char, this.x, this.y);
+            }
+        }
+        function createElements() { elements = Array.from({length: width < 600 ? 30 : 60}, () => new FallingElement()); }
+        function animate() { ctx.clearRect(0, 0, width, height); elements.forEach(el => { el.update(); el.draw(); }); requestAnimationFrame(animate); }
+        initCanvas(); createElements(); animate();
+
+        document.addEventListener('click', (e) => {
+            const pain = document.createElement('div');
+            pain.classList.add('pain-heart-effect'); pain.innerHTML = '💔'; 
+            pain.style.left = e.clientX + 'px'; pain.style.top = e.clientY + 'px';
+            document.body.appendChild(pain);
+            setTimeout(() => pain.remove(), 1800);
+        });
+
+        window.addEventListener("blur", () => { document.title = "Come back... 💔"; });
+        window.addEventListener("focus", () => { document.title = "Jakariya Hasan | Heartbroken Enthusiast"; });
+
+        // --- AI CHAT FUNCTIONALITY (merged from first HTML) ---
+        (function() {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageInput = document.getElementById('messageInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const fileInput = document.getElementById('fileInput');
+
+            function formatText(text) {
+                return text
+                    .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
+                        return `<pre><code>${code.trim()}</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>`;
+                    })
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/`([^`]+)`/g, '<code>$1</code>')
+                    .replace(/\n/g, '<br>');
+            }
+
+            window.copyCode = (btn) => {
+                const code = btn.previousElementSibling.innerText;
+                navigator.clipboard.writeText(code);
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = "Copy", 2000);
+            };
+
+            async function typeMessage(element, html) {
+                element.innerHTML = '';
+                let tempDiv = document.createElement('div');
+                tempDiv.innerHTML = html;
+                const nodes = Array.from(tempDiv.childNodes);
+                
+                for (let node of nodes) {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const text = node.textContent;
+                        for (let i = 0; i < text.length; i++) {
+                            element.innerHTML += text[i];
+                            chatContainer.scrollTop = chatContainer.scrollHeight;
+                            await new Promise(r => setTimeout(r, 12));
+                        }
+                    } else {
+                        element.innerHTML += node.outerHTML;
+                        chatContainer.scrollTop = chatContainer.scrollHeight;
+                        await new Promise(r => setTimeout(r, 10));
+                    }
+                }
+            }
+
+            async function handleSend() {
+                const prompt = messageInput.value.trim();
+                if (!prompt) return;
+
+                const userDiv = document.createElement('div');
+                userDiv.className = 'msg user';
+                userDiv.innerText = prompt;
+                chatContainer.appendChild(userDiv);
+                
+                messageInput.value = '';
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'msg ai';
+                aiDiv.innerHTML = `<div class="blooming-status"><div class="dot-pulse"></div>🌱 Thoughts are blooming...</div>`;
+                chatContainer.appendChild(aiDiv);
+
+                try {
+                    const res = await fetch('https://bj-tricks-ai.vercel.app/chat', {
+                        method: 'POST',
+                        body: new URLSearchParams({ 'text': prompt })
+                    });
+                    const data = await res.json();
+                    const response = data.result || "Sorry, my petals got a little tangled. Please try again.";
+                    
+                    await typeMessage(aiDiv, formatText(response));
+                } catch (e) {
+                    aiDiv.innerHTML = '<span style="color: #d81b60;">🍃 Connection lost. Please check your internet and try again.</span>';
+                }
+            }
+
+            sendBtn.addEventListener('click', handleSend);
+            messageInput.addEventListener('keypress', e => { if(e.key === 'Enter') handleSend(); });
+            document.getElementById('attachBtn').addEventListener('click', () => fileInput.click());
+        })();
+    </script>
+</body>
+</html>
